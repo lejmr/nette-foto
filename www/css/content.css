@@ -1,0 +1,37 @@
+div.folders ul{
+  margin-left: 0;
+padding-left: 0;
+
+  
+}
+
+div.folders li{
+list-style: none;
+background:url('../images/folder.png') left center no-repeat;
+padding-left: 30px;
+height:22px;
+margin-left:1em;
+}
+
+
+div.folders li a{
+  
+}
+
+div.images_files a, div.images_files a:hover{
+  text-decoration: none;  
+  
+}
+
+div.images_files a{
+  
+  border-color: black;
+  padding: 0px;
+  
+}
+
+div.images_files a img{
+  margin:0px;
+  width: 100px;
+  height: 100px;
+}

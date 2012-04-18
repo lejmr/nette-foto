@@ -1,0 +1,43 @@
+{block #content}
+
+	<b>Path: <a href="/">foto.lejmr.com</a> /
+	{var $ul=""}
+	{var l= count(explode("/",$url))}
+	{foreach explode("/",$url) as $u}
+		{var $ul=$ul."/".$u }
+		{if $l-- > 1}
+			<a href="{$ul}">{$u}</a>/
+		{else}
+			{$u}
+		{/if}
+	{/foreach}
+
+
+    <div id="main">
+
+    	<div class="folders">
+			<ul>
+				{foreach $dirs as $dir}
+  					{var $dir_url= str_replace($root."/","",$dir)}
+  					{var $name= array_reverse( explode("/",$dir)) }
+  					<li><a href="{plink Gallery:default $dir_url}">{$name[0]}</a></li>
+  
+				{/foreach}			
+			</ul>
+      </div>
+
+
+<p>
+
+</p>
+
+<br/>
+{foreach $files as $file}
+  {var $thumb= str_replace($root."/","",$file)}
+  <a href="{plink Gallery:preview $thumb}" rel="colorbox">
+  	<img src="{plink Gallery:thumbnail $thumb}"/>
+  </a>
+{/foreach}
+
+	</div>
+{/block}
